@@ -26,31 +26,34 @@ namespace TextCap
 
                 if (selectedElements.Count > 0)
                 {
-                    foreach (var selectedElementId in selectedElements)
+                    using (Transaction tx = new Transaction(doc, "Change TextNote to Uppercase"))
                     {
-                        Element selectedElement = doc.GetElement(selectedElementId);
-
-                        if (selectedElement is TextNote textNote)
+                        tx.Start();
+                        foreach (var selectedElementId in selectedElements)
                         {
-                            // Get text from the TextNote and convert to uppercase
-                            string originalText = textNote.Text;
-                            string upperCaseText = originalText.ToUpper();
+                            Element selectedElement = doc.GetElement(selectedElementId);
 
-                            // Set the text of the TextNote to uppercase
-                            using (Transaction tx = new Transaction(doc, "Change TextNote to Uppercase"))
+                            if (selectedElement is TextNote textNote)
                             {
-                                tx.Start();
-                                textNote.Text = upperCaseText;
-                                tx.Commit();
-                            }
+                                // Get text from the TextNote and convert to uppercase
+                                string originalText = textNote.Text;
+                                string upperCaseText = originalText.ToUpper();
 
-                            // Do something with the text (e.g., print it)
-                            Debug.WriteLine("Text from the selected TextNote: " + upperCaseText);
+                                // Set the text of the TextNote to uppercase
+
+                                textNote.Text = upperCaseText;
+
+
+                                // Do something with the text (e.g., print it)
+                                Debug.WriteLine("Text from the selected TextNote: " + upperCaseText);
+                            }
+                            else
+                            {
+                                continue;
+                            }
                         }
-                        else
-                        {
-                            continue;
-                        }
+
+                        tx.Commit();
                     }
                 }
                 else
