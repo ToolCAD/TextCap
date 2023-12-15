@@ -24,7 +24,7 @@ namespace TextCap
 
                 if (selectedElements.Count > 0)
                 {
-                    TextTransaction.UpdateCase(doc, selectedElements, TextService.ConvertToTitleCase);
+                    TextTransaction.UpdateCase(doc, selectedElements, TextConvert.ToTitleCase);
                 }
                 else
                 {
@@ -36,7 +36,7 @@ namespace TextCap
 
                         var pickedElementRef = uiDoc.Selection.PickObject(ObjectType.Element);
                         pickedElement = doc.GetElement(pickedElementRef);
-                        selectContinue = TextTransaction.UpdateSingleText(doc, pickedElement, TextService.ConvertToTitleCase);
+                        selectContinue = TextTransaction.UpdateSingleText(doc, pickedElement, TextConvert.ToTitleCase);
                     }
 
                 }

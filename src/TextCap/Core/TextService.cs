@@ -1,24 +1,18 @@
-﻿using Autodesk.Revit.DB.Structure;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace TextCap.Core
 {
-    public static class TextService
+    public static class TextConvert
     {
-        public static string ConvertToLowerCase(string input)
+        public static string ToLowerCase(string input)
         {
             return input.ToLower();
         }
-        public static string ConvertToUpperCase(string input)
+        public static string ToUpperCase(string input)
         {
             return input.ToUpper();
         }
-        public static string ConvertToSentenceCase(string input)
+        public static string ToSentenceCase(string input)
         {
             if (string.IsNullOrEmpty(input))
             {
@@ -38,7 +32,7 @@ namespace TextCap.Core
 
             return sentenceCase;
         }
-        public static string ConvertToTitleCase(string input)
+        public static string ToTitleCase(string input)
         {
             if (string.IsNullOrEmpty(input))
             {
