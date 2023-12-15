@@ -8,6 +8,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextCap.Api;
+using TextCap.Core;
 
 namespace TextCap
 {
@@ -16,7 +18,6 @@ namespace TextCap
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            // Access the active Revit document
             var uiDoc = commandData.Application.ActiveUIDocument;
             var doc = uiDoc.Document;
 
@@ -26,81 +27,21 @@ namespace TextCap
 
                 if (selectedElements.Count > 0)
                 {
-                    using (Transaction tx = new Transaction(doc, "Change TextNote to Uppercase"))
-                    {
-                        tx.Start();
-                        foreach (var selectedElementId in selectedElements)
-                        {
-                            Element selectedElement = doc.GetElement(selectedElementId);
-
-                            if (selectedElement is TextNote textNote)
-                            {
-                                // Get text from the TextNote and convert to uppercase
-                                string originalText = textNote.Text;
-                                string upperCaseText = originalText.ToUpper();
-
-                                // Set the text of the TextNote to uppercase
-
-                                textNote.Text = upperCaseText;
-
-
-                                // Do something with the text (e.g., print it)
-                                Debug.WriteLine("Text from the selected TextNote: " + upperCaseText);
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
-
-                        tx.Commit();
-                    }
+                    TextTransaction.UpdateCase(doc, selectedElements, TextService.ConvertToUpperCase);
                 }
                 else
                 {
-                    Element pickedElement = null;
+                    var selectContinue = true;
 
-                    try
+                    while (selectContinue)
                     {
-                        // Prompt user to select an element
+                        Element pickedElement = null;
+
                         var pickedElementRef = uiDoc.Selection.PickObject(ObjectType.Element);
                         pickedElement = doc.GetElement(pickedElementRef);
-
-                        // Check if the picked element is a TextNote
-                        if (pickedElement is TextNote textNote)
-                        {
-                            // Get text from the TextNote
-                            string text = textNote.Text;
-
-                            // Get text from the TextNote and convert to uppercase
-                            string originalText = textNote.Text;
-                            string upperCaseText = originalText.ToUpper();
-
-                            // Set the text of the TextNote to uppercase
-                            using (Transaction tx = new Transaction(doc, "Change TextNote to Uppercase"))
-                            {
-                                tx.Start();
-                                textNote.Text = upperCaseText;
-                                tx.Commit();
-                            }
-
-
-
-                            // Do something with the text (e.g., print it)
-                            Debug.WriteLine("Text from the selected TextNote: " + text);
-                        }
-                        else
-                        {
-                            Debug.WriteLine("The selected element is not a TextNote.");
-                            return Result.Failed;
-                        }
+                        selectContinue = TextTransaction.UpdateSingleText(doc, pickedElement, TextService.ConvertToUpperCase);
                     }
-                    catch (Exception ex)
-                    {
 
-                        Debug.WriteLine(ex.Message);
-                        return Result.Failed;
-                    }
                 }
             }
             catch (Exception ex)
@@ -111,5 +52,6 @@ namespace TextCap
 
             return Result.Succeeded;
         }
+
     }
 }

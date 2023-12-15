@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autodesk.Revit.DB.Structure;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -9,6 +10,14 @@ namespace TextCap.Core
 {
     public static class TextService
     {
+        public static string ConvertToLowerCase(string input)
+        {
+            return input.ToLower();
+        }
+        public static string ConvertToUpperCase(string input)
+        {
+            return input.ToUpper();
+        }
         public static string ConvertToSentenceCase(string input)
         {
             if (string.IsNullOrEmpty(input))
