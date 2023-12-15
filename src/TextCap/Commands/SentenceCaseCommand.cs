@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using TextCap.Core;
 
 namespace TextCap
 {
@@ -34,7 +35,7 @@ namespace TextCap
 
                     // Get text from the TextNote and convert to uppercase
                     string originalText = textNote.Text;
-                    string sentenceCaseText = ConvertToSentenceCase(originalText);
+                    string sentenceCaseText = TextService.ConvertToSentenceCase(originalText);
 
                     using (Transaction tx = new Transaction(doc, "Change TextNote to SentenceCase"))
                     {
@@ -71,25 +72,6 @@ namespace TextCap
             return Result.Succeeded;
         }
 
-        public static string ConvertToSentenceCase(string input)
-        {
-            if (string.IsNullOrEmpty(input))
-            {
-                // Handle empty or null input as needed
-                return string.Empty;
-            }
 
-            // Convert the input string to lowercase
-            input = input.ToLower();
-
-            // Create a TextInfo object to manipulate casing
-            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-
-            // Capitalize the first letter of the string
-            string firstLetter = textInfo.ToTitleCase(input[0].ToString());
-            string sentenceCase = firstLetter + input.Substring(1, input.Length - 1);
-
-            return sentenceCase;
-        }
     }
 }

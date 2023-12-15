@@ -55,6 +55,7 @@
     <Compile Include="Commands\SentenceCaseCommand.cs" />
     <Compile Include="Commands\TitleCaseCommand.cs" />
     <Compile Include="Commands\UpperCaseCommand.cs" />
+    <Compile Include="Core\TextService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

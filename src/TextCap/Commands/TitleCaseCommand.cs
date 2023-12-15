@@ -5,6 +5,7 @@ using Autodesk.Revit.UI.Selection;
 using System;
 using System.Diagnostics;
 using System.Globalization;
+using TextCap.Core;
 
 namespace TextCap
 {
@@ -33,7 +34,7 @@ namespace TextCap
 
                     // Get text from the TextNote and convert to uppercase
                     string originalText = textNote.Text;
-                    string upperCaseText = ConvertToTitleCase(originalText);
+                    string upperCaseText = TextService.ConvertToTitleCase(originalText);
 
                     // Set the text of the TextNote to uppercase
                     using (Transaction tx = new Transaction(doc, "Change TextNote to Uppercase"))
@@ -71,21 +72,6 @@ namespace TextCap
             return Result.Succeeded;
         }
 
-        public static string ConvertToTitleCase(string input)
-        {
-            if (string.IsNullOrEmpty(input))
-            {
-                // Handle empty or null input as needed
-                return string.Empty;
-            }
-
-            // Create a TextInfo object to manipulate casing
-            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-
-            // Convert the input string to title case
-            string titleCase = textInfo.ToTitleCase(input.ToLower());
-
-            return titleCase;
-        }
+        
     }
 }

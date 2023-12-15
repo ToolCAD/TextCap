@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34407.89
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextCap", "src\TextCap\TextCap.csproj", "{59A42167-38DB-426A-B36B-BEFD38C1005B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextCap.Test", "tests\TextCap.Test\TextCap.Test.csproj", "{0EA07131-3954-447E-8FC8-3E2F8618A359}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{59A42167-38DB-426A-B36B-BEFD38C1005B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59A42167-38DB-426A-B36B-BEFD38C1005B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59A42167-38DB-426A-B36B-BEFD38C1005B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA07131-3954-447E-8FC8-3E2F8618A359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA07131-3954-447E-8FC8-3E2F8618A359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA07131-3954-447E-8FC8-3E2F8618A359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA07131-3954-447E-8FC8-3E2F8618A359}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
