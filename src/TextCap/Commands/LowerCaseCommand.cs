@@ -4,6 +4,8 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using System;
 using System.Diagnostics;
+using TextCap.Api;
+using TextCap.Core;
 
 namespace TextCap
 {
@@ -12,58 +14,35 @@ namespace TextCap
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            // Access the active Revit document
             var uiDoc = commandData.Application.ActiveUIDocument;
             var doc = uiDoc.Document;
 
-            Element pickedElement = null;
-
             try
             {
-                // Prompt user to select an element
-                var pickedElementRef = uiDoc.Selection.PickObject(ObjectType.Element);
-                pickedElement = doc.GetElement(pickedElementRef);
+                var selectedElements = uiDoc.Selection.GetElementIds();
 
-                // Check if the picked element is a TextNote
-                if (pickedElement is TextNote textNote)
+                if (selectedElements.Count > 0)
                 {
-                    // Get text from the TextNote
-                    string text = textNote.Text;
-
-                    // Get text from the TextNote and convert to uppercase
-                    string originalText = textNote.Text;
-                    string upperCaseText = originalText.ToLower();
-
-                    // Set the text of the TextNote to uppercase
-                    using (Transaction tx = new Transaction(doc, "Change TextNote to Lower case"))
-                    {
-                        tx.Start();
-                        textNote.Text = upperCaseText;
-                        tx.Commit();
-                    }
-
-
-
-                    // Do something with the text (e.g., print it)
-                    Debug.WriteLine("Text from the selected TextNote: " + text);
+                    TextTransaction.UpdateCase(doc, selectedElements, TextService.ConvertToLowerCase);
                 }
                 else
                 {
-                    Debug.WriteLine("The selected element is not a TextNote.");
-                    return Result.Failed;
+                    var selectContinue = true;
+
+                    while (selectContinue)
+                    {
+                        Element pickedElement = null;
+
+                        var pickedElementRef = uiDoc.Selection.PickObject(ObjectType.Element);
+                        pickedElement = doc.GetElement(pickedElementRef);
+                        selectContinue = TextTransaction.UpdateSingleText(doc, pickedElement, TextService.ConvertToLowerCase);
+                    }
+
                 }
             }
             catch (Exception ex)
             {
-
                 Debug.WriteLine(ex.Message);
-                return Result.Failed;
-            }
-
-
-            if (pickedElement == null)
-            {
-                Debug.WriteLine("No element selected");
                 return Result.Failed;
             }
 
