@@ -15,39 +15,16 @@ namespace TextCap
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            var uiDoc = commandData.Application.ActiveUIDocument;
-            var doc = uiDoc.Document;
-
             try
             {
-                var selectedElements = uiDoc.Selection.GetElementIds();
-
-                if (selectedElements.Count > 0)
-                {
-                    TextTransaction.UpdateCase(doc, selectedElements, TextConvert.ToTitleCase);
-                }
-                else
-                {
-                    var selectContinue = true;
-
-                    while (selectContinue)
-                    {
-                        Element pickedElement = null;
-
-                        var pickedElementRef = uiDoc.Selection.PickObject(ObjectType.Element);
-                        pickedElement = doc.GetElement(pickedElementRef);
-                        selectContinue = TextTransaction.UpdateSingleText(doc, pickedElement, TextConvert.ToTitleCase);
-                    }
-
-                }
+                var result = TextTransaction.ProcessLowerCaseConversion(commandData, TextConvert.ToTitleCase);
+                return result;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
                 return Result.Failed;
             }
-
-            return Result.Succeeded;
         }
 
         
