@@ -35,6 +35,9 @@ namespace TextCap
             var pulldownButton=(PulldownButton)panel.AddItem(textCapPullDownButtonData);
 
             AddPushButton(pulldownButton, typeof(UpperCaseCommand), "Upper Case");
+            AddPushButton(pulldownButton, typeof(LowerCaseCommand), "Lower Case");
+            AddPushButton(pulldownButton, typeof(SentenceCaseCommand), "Sentence Case");
+            AddPushButton(pulldownButton, typeof(TitleCaseCommand), "Title Case");
 
             return Result.Succeeded;
         }

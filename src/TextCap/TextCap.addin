@@ -19,7 +19,7 @@
     <AddInId>
       e5642222-f009-43d1-917d-49274cfc360f
     </AddInId>
-    <FullClassName>TextCap.UpperCaseCommand</FullClassName>
+    <FullClassName>TextCap.Commands.UpperCaseCommand</FullClassName>
     <Text>Upper Case</Text>
     <VendorId>cadhaks</VendorId>
     <VendorDescription>cadhaks, https://github.com/cadhaks</VendorDescription>

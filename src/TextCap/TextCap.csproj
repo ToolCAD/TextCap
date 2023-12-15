@@ -51,7 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="UpperCaseCommand.cs" />
+    <Compile Include="Commands\LowerCaseCommand.cs" />
+    <Compile Include="Commands\SentenceCaseCommand.cs" />
+    <Compile Include="Commands\TitleCaseCommand.cs" />
+    <Compile Include="Commands\UpperCaseCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
