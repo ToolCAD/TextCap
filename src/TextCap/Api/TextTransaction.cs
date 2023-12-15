@@ -47,7 +47,7 @@ namespace TextCap.Api
             {
                 // Get text from the TextNote and convert to uppercase
                 string originalText = textNote.Text;
-                string upperCaseText = originalText.ToUpper();
+                string upperCaseText = TextConverter(originalText);
 
                 // Set the text of the TextNote to uppercase
                 using (Transaction tx = new Transaction(doc, "Change TextNote to Uppercase"))
