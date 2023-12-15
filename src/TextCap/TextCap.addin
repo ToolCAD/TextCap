@@ -3,26 +3,16 @@
 
   <AddIn Type="Application">
     <Name>TextCap</Name>
-    <Assembly>Codehaks/TextCap.dll</Assembly>
+    <Description>Convert Text Note Case To Lower,Upper,Sentence and Title</Description>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+
+    <Assembly>cadhaks/TextCap.dll</Assembly>
     <AddInId>
       46cbfba0-3ab8-41cc-afe8-7b89e2ecb8fb
     </AddInId>
     <FullClassName>TextCap.App</FullClassName>
     <VendorId>cadhaks</VendorId>
-    <VendorDescription>cadhaks, https://github.com/cadhaks</VendorDescription>
-  </AddIn>
-
-  <AddIn Type="Command">
-    <Assembly>
-      Codehaks/TextCap.dll
-    </Assembly>
-    <AddInId>
-      e5642222-f009-43d1-917d-49274cfc360f
-    </AddInId>
-    <FullClassName>TextCap.Commands.UpperCaseCommand</FullClassName>
-    <Text>Upper Case</Text>
-    <VendorId>cadhaks</VendorId>
-    <VendorDescription>cadhaks, https://github.com/cadhaks</VendorDescription>
+    <VendorDescription>cadhaks, https://github.com/CADhaks/TextCap</VendorDescription>
   </AddIn>
 
 </RevitAddIns>
