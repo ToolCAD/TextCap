@@ -7,6 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextCap", "src\TextCap\Text
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextCap.Test", "tests\TextCap.Test\TextCap.Test.csproj", "{0EA07131-3954-447E-8FC8-3E2F8618A359}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A2C91561-29C6-4C3D-A303-940C749065A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DFE4F6E6-BEC3-4642-B2A1-4F4A98D48D4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C1619D88-3413-4B4C-B4A2-5FB082468D86}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		docs\screenshot.jpg = docs\screenshot.jpg
+		docs\TextCap-v1-demo.mp4 = docs\TextCap-v1-demo.mp4
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +35,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{59A42167-38DB-426A-B36B-BEFD38C1005B} = {A2C91561-29C6-4C3D-A303-940C749065A9}
+		{0EA07131-3954-447E-8FC8-3E2F8618A359} = {DFE4F6E6-BEC3-4642-B2A1-4F4A98D48D4A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2664C9EE-B58C-4E1B-834C-D23EA1F8443B}
