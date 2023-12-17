@@ -1,7 +1,3 @@
-Certainly! Here's an updated version of the README with the demo video and screenshot added:
-
----
-
 # TextCap - Revit 2024 Add-In
 
 ## Overview
