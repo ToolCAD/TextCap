@@ -26,8 +26,8 @@ namespace TextCap
 
             {
                 // Set the LargeImage of levelsButton using an embedded resource
-                Image = new BitmapImage(new Uri("pack://application:,,,/TextCap;component/Resources/textcap-16.png", UriKind.RelativeOrAbsolute)),
-                LargeImage = new BitmapImage(new Uri("pack://application:,,,/TextCap;component/Resources/textcap-32.png", UriKind.RelativeOrAbsolute))
+                Image = new BitmapImage(new Uri("pack://application:,,,/TextCap;component/Resources/icon-16.png", UriKind.RelativeOrAbsolute)),
+                LargeImage = new BitmapImage(new Uri("pack://application:,,,/TextCap;component/Resources/icon-32.png", UriKind.RelativeOrAbsolute))
             };
 
             var panel = application.CreateRibbonPanel("Cadhaks");

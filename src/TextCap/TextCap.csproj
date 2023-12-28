@@ -65,8 +65,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\textcap-16.png" />
-    <Resource Include="Resources\textcap-32.png" />
+    <Resource Include="Resources\icon-16.png" />
+    <Resource Include="Resources\icon-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
