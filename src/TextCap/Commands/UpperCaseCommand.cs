@@ -20,7 +20,7 @@ namespace TextCap
         {
             try
             {
-                var result = TextTransaction.ProcessLowerCaseConversion(commandData, TextConvert.ToUpperCase);
+                var result = TextTransaction.Process(commandData, TextConvert.ToUpperCase);
                 return result;
             }
             catch (Exception ex)

@@ -17,7 +17,7 @@ namespace TextCap
         {
             try
             {
-                var result = TextTransaction.ProcessLowerCaseConversion(commandData, TextConvert.ToTitleCase);
+                var result = TextTransaction.Process(commandData, TextConvert.ToTitleCase);
                 return result;
             }
             catch (Exception ex)

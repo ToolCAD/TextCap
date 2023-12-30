@@ -11,7 +11,7 @@ namespace TextCap.Api
     public static class TextTransaction
     {
 
-        public static Result ProcessLowerCaseConversion(ExternalCommandData commandData, Func<string, string> TextConverter)
+        public static Result Process(ExternalCommandData commandData, Func<string, string> TextConverter)
         {
             var uiDoc = commandData.Application.ActiveUIDocument;
             var doc = uiDoc.Document;
