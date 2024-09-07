@@ -2,7 +2,7 @@
   
   <Package Name="TextCap" Language="1033" Version="1.0.0.0" Manufacturer="CADhaks" UpgradeCode="a40318a8-6fae-48b5-a1f5-c61e0fdbe6e0" InstallerVersion="200" Scope="perUser">
     
-    <Media Id="1" Cabinet="yourplugin.cab" EmbedCab="yes" />
+    <Media Id="1" Cabinet="TextCap.cab" EmbedCab="yes" />
     <Feature Id="DefaultFeature" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
     </Feature>
