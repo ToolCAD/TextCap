@@ -20,8 +20,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C1619D88-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{A368C0D6-078E-4ADA-AF27-9141EFFACDFA}"
 EndProject
-Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "TextCapSetup", "installer\TextCapSetup\TextCapSetup.wixproj", "{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,22 +64,6 @@ Global
 		{0EA07131-3954-447E-8FC8-3E2F8618A359}.Release|x64.Build.0 = Release|Any CPU
 		{0EA07131-3954-447E-8FC8-3E2F8618A359}.Release|x86.ActiveCfg = Release|Any CPU
 		{0EA07131-3954-447E-8FC8-3E2F8618A359}.Release|x86.Build.0 = Release|Any CPU
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Debug|Any CPU.Build.0 = Debug|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Debug|ARM64.ActiveCfg = Debug|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Debug|ARM64.Build.0 = Debug|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Debug|x64.ActiveCfg = Debug|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Debug|x64.Build.0 = Debug|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Debug|x86.ActiveCfg = Debug|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Debug|x86.Build.0 = Debug|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Release|Any CPU.ActiveCfg = Release|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Release|Any CPU.Build.0 = Release|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Release|ARM64.ActiveCfg = Release|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Release|ARM64.Build.0 = Release|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Release|x64.ActiveCfg = Release|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Release|x64.Build.0 = Release|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Release|x86.ActiveCfg = Release|x86
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,7 +71,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{59A42167-38DB-426A-B36B-BEFD38C1005B} = {A2C91561-29C6-4C3D-A303-940C749065A9}
 		{0EA07131-3954-447E-8FC8-3E2F8618A359} = {DFE4F6E6-BEC3-4642-B2A1-4F4A98D48D4A}
-		{D7AD915B-DA85-4CE1-B70E-0C9CFA882FDE} = {A368C0D6-078E-4ADA-AF27-9141EFFACDFA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2664C9EE-B58C-4E1B-834C-D23EA1F8443B}
