@@ -11,10 +11,10 @@ using WixSharp.Controls;
 using File = System.IO.File;
 
 const string installationDir = @"%AppDataFolder%\Autodesk\Revit\Addins\";
-const string projectName = "RevitAddinManager";
-const string outputName = "RevitAddinManager";
+const string projectName = "TextCap";
+const string outputName = "TextCap";
 const string outputDir = "output";
-const string version = "1.5.6";
+const string version = "1.0.0";
 
 var fileName = new StringBuilder().Append(outputName).Append("-").Append(version);
 var project = new Project
@@ -22,21 +22,21 @@ var project = new Project
     Name = projectName,
     OutDir = outputDir,
     Platform = Platform.x64,
-    Description = "Project Support Developer Work With Revit API",
+    Description = "Seamlessly transform text notes to various formats",
     UI = WUI.WixUI_InstallDir,
     Version = new Version(version),
     OutFileName = fileName.ToString(),
     InstallScope = InstallScope.perUser,
     MajorUpgrade = MajorUpgrade.Default,
-    GUID = new Guid("A0176A8B-2483-4073-B6BB-4A481D9B4439"),
+    GUID = new Guid("8f1fd7a9-7f42-464b-92d1-d0bdb7605ae5"),
     BackgroundImage = @"Installer\Resources\Icons\BackgroundImage.png",
     BannerImage = @"Installer\Resources\Icons\BannerImage.png",
     ControlPanelInfo =
     {
         Manufacturer = "Autodesk",
-        HelpLink = "https://github.com/chuongmep/RevitAddInManager/issues",
+        HelpLink = "https://github.com/CADhaks/TextCap/issues",
         Comments = "Project Support Developer With Revit API",
-        ProductIcon = @"Installer\Resources\Icons\ShellIcon.ico"
+        ProductIcon = @"Installer\Resources\Icons\ShellIcon.png"
     },
     Dirs = new Dir[]
     {

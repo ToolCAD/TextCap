@@ -22,8 +22,5 @@
       <None Update="Resources\Icons\BannerImage.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="Resources\Icons\ShellIcon.ico">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
     </ItemGroup>
 </Project>
