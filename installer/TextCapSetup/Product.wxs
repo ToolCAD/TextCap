@@ -16,8 +16,8 @@
             <Directory Id="AddinsFolder" Name="Addins">
               <Directory Id="Revit2024Folder" Name="2024">
                 <Component Id="TextCapComponent" Guid="59a42167-38db-426a-b36b-befd38c1005b">
-                  <File Id="TextCapDLL" Source="..\src\TextCap\bin\Release\TextCap.dll" KeyPath="yes" />
-                  <File Id="TextCapAddin" Source="..\src\TextCap\bin\Release\TextCap.addin" />
+                  <File Id="TextCapDLL" Source="..\..\src\TextCap\bin\Release\TextCap.dll" KeyPath="yes" />
+                  <File Id="TextCapAddin" Source="..\..\src\TextCap\bin\Release\TextCap.addin" />
                 </Component>
               </Directory>
             </Directory>
