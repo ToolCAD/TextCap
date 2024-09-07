@@ -1,0 +1,37 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  
+  <Package Name="TextCap" Language="1033" Version="1.0.0.0" Manufacturer="CADhaks" UpgradeCode="a40318a8-6fae-48b5-a1f5-c61e0fdbe6e0" InstallerVersion="200" Scope="perUser">
+    
+    <Media Id="1" Cabinet="yourplugin.cab" EmbedCab="yes" />
+    <Feature Id="DefaultFeature" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Package>
+
+
+  <Fragment>
+      <StandardDirectory Id="AppDataFolder">
+        <Directory Id="AutodeskFolder" Name="Autodesk">
+          <Directory Id="RevitFolder" Name="Revit">
+            <Directory Id="AddinsFolder" Name="Addins">
+              <Directory Id="Revit2024Folder" Name="2024">
+                <Component Id="TextCapComponent" Guid="59a42167-38db-426a-b36b-befd38c1005b">
+                  <File Id="TextCapDLL" Source="..\src\TextCap\bin\Release\TextCap.dll" KeyPath="yes" />
+                  <File Id="TextCapAddin" Source="..\src\TextCap\bin\Release\TextCap.addin" />
+                </Component>
+              </Directory>
+            </Directory>
+          </Directory>
+        </Directory>
+      </StandardDirectory>
+    </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+      <!-- <Component Id="ProductComponent"> -->
+      <!-- TODO: Insert files, registry keys, and other resources here. -->
+      <!-- </Component> -->
+    </ComponentGroup>
+  </Fragment>
+</Wix>

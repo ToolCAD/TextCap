@@ -1,0 +1,5 @@
+<Project Sdk="WixToolset.Sdk/5.0.1">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+</Project>
